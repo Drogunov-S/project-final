@@ -40,7 +40,7 @@ spring:
     cache-names: users
     caffeine.spec: maximumSize=10000,expireAfterAccess=5m
   datasource:
-    url: ${DATABASE_JDBC}${PROD_DATABASE_URL}
+    url: jdbc:${PROD_DATABASE_URL}
     username: ${PROD_PGUSER}
     password: ${PROD_PGPASSWORD}
   mail:
