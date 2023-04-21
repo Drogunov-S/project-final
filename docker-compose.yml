@@ -1,8 +1,5 @@
 version: "3.9"
 
-volumes:
-  pgdata:
-    name: pgdata
 services:
   jira:
     image: jira-app
@@ -20,7 +17,6 @@ services:
   nginx:
     container_name: nginx
     image: nginx:1.13
-    restart: always
     ports:
       - "80:80"
     volumes:
@@ -41,3 +37,6 @@ services:
       retries: 5
       start_period: 5s
     restart: unless-stopped
+volumes:
+  pgdata:
+    name: pgdata

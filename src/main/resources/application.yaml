@@ -1,6 +1,6 @@
 #  https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 app:
-  host-url: ${{HOST_URL}}
+  host-url: ${HOST_URL}
   test-mail: ${TEST_MAIL}
   templates-update-cache: 5s
   mail-sending-props:
@@ -40,9 +40,9 @@ spring:
     cache-names: users
     caffeine.spec: maximumSize=10000,expireAfterAccess=5m
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${SPRING_DATASOURCE_USERNAME}
-    password: ${SPRING_DATASOURCE_PASSWORD}
+    url: ${DATABASE_JDBC}${PROD_DATABASE_URL}
+    username: ${PROD_PGUSER}
+    password: ${PROD_PGPASSWORD}
   mail:
     properties:
       mail:
@@ -59,7 +59,7 @@ spring:
       client:
         registration:
           github:
-            client-id: ${GITHUB_CLIENT_ID}}
+            client-id: ${GITHUB_CLIENT_ID}
             client-secret: ${GITHUB_CLIENT_SECRET}
             scope: ${GITHUB_SCOPE}
           google:
